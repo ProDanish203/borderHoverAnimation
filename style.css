@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: .2s;
+    font-family: 'Poppins', sans-serif; 
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+    min-height: 100vh;  
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+.cards{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.card{
+    max-width: 350px;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    background-color: #141414;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    color: #fff;
+    overflow: hidden;
+}
+.card::before{
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background-color: #141414;
+    z-index: -1;
+}
+.card::after{
+    content: '';
+    position: absolute;
+    height: 200%;
+    width: 200%;
+    left: -50%;
+    top: -50%;
+    background-image: linear-gradient(90deg,  rgba(9,9,121,1) 25%, rgba(0,103,255,1) 100%), linear-gradient(90deg,  rgba(121,9,45,1) 25%, rgba(239,0,255,1) 100%);
+    background-repeat: no-repeat;
+    background-size: 40% 40%;
+    background-position: 0 0, 100% 100%;
+    z-index: -2;
+    animation: rotate 4s linear infinite;
+    -webkit-animation:;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    -webkit-transform: opacity 0.3s ease;
+    -moz-transform: opacity 0.3s ease;
+    -ms-transform: opacity 0.3s ease;
+    -o-transform: opacity 0.3s ease;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
+}
+.card:hover::after{
+    opacity: 1;
+    animation-play-state: running;
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+}
+}
+.card span{
+    font-size: 60px;
+    font-weight: 700;
+    /* position: absolute;
+    top: -18%;
+    left: -5%; */
+}
+.card h2{
+    font-size: 25px;
+    text-transform: capitalize;
+}
+.card p{
+    margin-top: 15px;
+}
